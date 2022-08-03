@@ -1,38 +1,98 @@
-.App {
+/* variables */
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --p-10: 10px;
+  --m-10: 10px;
+  --blue-color: #1a73e8;
+  --disabled-blue-color: #7dadec;
+  --white-color: white;
+  --grey-color: #c6c5c5;
+  --error-color: red;
+  --br-4: 4px;
+}
+
+/* default styles overwriting/editing */
+button {
+  cursor: pointer;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: var(--br-4);
+  height: 30px;
+  width: 70px;
+  margin: var(--m-10);
+}
+
+p {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+}
+
+textarea {
+  resize: none;
+  width: 250px;
+  height: 100px;
+  padding: var(--p-10);
+  margin: var(--m-10);
+  font-family: var(--font-family);
+  border-radius: var(--br-4);
+  border: 1px solid var(--grey-color);
+  max-width: inherit;
+  text-transform: none;
+}
+
+input {
+  width: 250px;
+  height: 35px;
+  margin: var(--m-10);
+  padding: var(--p-10);
+  border-radius: var(--br-4);
+  border: 1px solid var(--grey-color);
+  text-transform: capitalize;
+}
+
+::placeholder {
+  font-family: var(--font-family);
+}
+
+:focus {
+  border: 1px solid var(--blue-color);
+}
+/* styles by classNames */
+.contact {
   text-align: center;
+  width: 30%;
+  padding: 50px;
+  /* margin-inline: auto; */
+  border: 1px solid var(--grey-color);
+  border-radius: var(--br-4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contact__form {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: var(--m-10);
 }
 
-.App-link {
-  color: #61dafb;
+/* other styles - used for conditional styles */
+.cursor__not-allowed {
+  cursor: not-allowed;
+  background-color: var(--disabled-blue-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-transform__normal {
+  text-transform: initial;
+}
+
+.error-boundary {
+  border: 1px solid var(--error-color);
 }
